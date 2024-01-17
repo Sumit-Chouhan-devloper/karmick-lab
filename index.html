@@ -926,7 +926,6 @@
         document.getElementById("navBar").classList.remove("shownav");
         document.body.classList.remove("overflow-hidden");
       }
-   
 
       const preloader = document.getElementById("preloader");
 
@@ -937,29 +936,26 @@
       }, 3000);
     </script>
     <!-- back to top  -->
-     <script>
+    <script>
+      const topbtn = document.getElementById("topbtn");
+      window.onscroll = function () {
+        topscroll();
+      };
 
-        const topbtn = document.getElementById('topbtn');
-
-
-        window.onscroll = function () { topscroll() };
-
-        function topscroll() {
-            if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
-                topbtn.style.display = "block";
-            }
-            else {
-                topbtn.style.display = "none";
-            }
+      function topscroll() {
+        if (
+          document.body.scrollTop > 200 ||
+          document.documentElement.scrollTop > 200
+        ) {
+          topbtn.style.display = "block";
+        } else {
+          topbtn.style.display = "none";
         }
-
-
-        function backToTop() {
-            document.body.scrollTop = 0;
-            document.documentElement.scrollTop = 0;
-        }
-
-
+      }
+      function backToTop() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+      }
     </script>
     <!-- aos js link  -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
